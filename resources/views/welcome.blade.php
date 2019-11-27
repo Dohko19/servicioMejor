@@ -2,7 +2,11 @@
 @section('body-class', 'landing-page sidebar-collapse')
 @section('content')
 <div class="page-header header-filter" data-parallax="true" style="background-image: url('{{ asset('images/fondo.jpg') }}')">
-	<h1 class=" title text-center" style="color: white;"> This is Awesome</h1>
+	<div class="container">
+		<div class="row">
+			<h1 class=" title text-center" style="color: white;"> This is Awesome</h1>
+		</div>
+	</div>
 </div>
 <div class="main main-raised">
     <div class="container">
@@ -45,7 +49,7 @@
 		<br>
 		<br>
 		<br>
-		<br><h1>Some Text Hear</h1>
+		<br><h1 class="text-center">Some Text Hear</h1>
 		<br>
 		<br>
 		<br>
