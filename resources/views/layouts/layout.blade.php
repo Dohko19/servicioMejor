@@ -44,23 +44,24 @@
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <i class="material-icons">business_center</i> ¿Quienes Somos?
             </a>
+            {{-- Item de dropdown --}}
             <div class="dropdown-menu dropdown-with-icons">
               <a href="#" class="dropdown-item">
                 <i class="material-icons">layers</i> ¿Acerca de ...?
               </a>
             </div>
+            {{-- end dropdown --}}
           </li>
-          <li class="nav-item ml-3">
-            ASPAS
-          </li>
-          <li class="nav-item ml-3">
-           CECAFF
-          </li>
-          <li class="nav-item ml-3">
-            KIIWIT
-          </li>
-          <li class="nav-item ml-3">
-            Contactanos
+          <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons">view_day</i>Categorias
+              <div class="ripple-container"></div>
+            </a>
+            <div class="dropdown-menu dropdown-with-icons">
+              <a href="#" class="dropdown-item">Categoria 1</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">Categoria 2 etc....</a>
+            </div>
           </li>
         </ul>
       </div>
