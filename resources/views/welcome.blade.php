@@ -10,11 +10,14 @@
 </div>
 <div class="main main-raised">
     <div class="container">
-    	<h2 class="text-center">Nosotros</h2>
-    	<h3 class="text-center">
-    		Una Breve descripcion
-    	</h3>
-
+    	<div class="section text-center">
+    		<div class="row">
+    			<div class="col-md-8 ml-auto mr-auto">
+    				<h2 class="title">Nosotros</h2>
+    				<h5 class="description">Aqui una descripcion de nosotros :v</h5>
+    			</div>
+    		</div>
+    	</div>
     	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">
 		    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

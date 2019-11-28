@@ -40,7 +40,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-1">
                         <!-- Authentication Links -->
-                 {{--        @guest
+                        @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -67,8 +67,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest --}}
-                        ¿Quienes Somos?
+                        @endguest
                     </ul>
                     <ul class="navbar-nav ml-3">
                         ASPAS
