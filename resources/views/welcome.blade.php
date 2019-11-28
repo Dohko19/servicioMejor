@@ -45,7 +45,7 @@
 		  </a>
 		</div>
     </div>
-    <hr>
+    <hr><br><br>
 </div>
 <div class="main main-raised" style="background-color: #444444; color: white;">
 	<div class="container">
@@ -59,4 +59,7 @@
 		<br>
 	</div>
 </div>
+
+{{-- Modal --}}
+
 @endsection

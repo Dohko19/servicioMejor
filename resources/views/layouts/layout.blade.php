@@ -57,7 +57,8 @@
             <div class="dropdown-menu dropdown-with-icons">
               <a href="#" class="dropdown-item">Categoria 1</a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">Categoria 2 etc....</a>
+              <a href="#" class="dropdown-item">Categoria 2 </a>
+              <a href="#" class="dropdown-item">Categoria 3 </a>
             </div>
           </li>
           @guest
@@ -66,7 +67,11 @@
               </li>
               @if (Route::has('register'))
                   <li class="nav-item">
-                      <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                      {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#signupModal">
+                          <i class="material-icons">assignment</i>
+                          {{ __('Registrarse') }}
+                      </a>
                   </li>
               @endif
           @else
@@ -94,27 +99,171 @@
   </nav>
   @yield('content')
   {{-- Footer section --}}
-  <footer class="footer footer-default" style="background-color: black; color: white;">
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-signup" role="document">
+    <div class="modal-content">
+      <div class="card card-signup card-plain">
+        <div class="modal-header">
+          <h5 class="modal-title card-title">Registro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5 ml-auto">
+              <div class="info info-horizontal">
+                <div class="icon icon-rose">
+                  <i class="material-icons">timeline</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Marketing</h4>
+                  <p class="description">
+                  We've created the marketing campaign of the website. It was a very interesting collaboration.
+                  </p>
+                </div>
+              </div>
+
+              <div class="info info-horizontal">
+                <div class="icon icon-primary">
+                  <i class="material-icons">code</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Fully Coded in HTML5</h4>
+                  <p class="description">
+                  We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.
+                  </p>
+                </div>
+              </div>
+
+              <div class="info info-horizontal">
+                <div class="icon icon-info">
+                  <i class="material-icons">group</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Built Audience</h4>
+                  <p class="description">
+                  There is also a Fully Customizable UI Kit for this product.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-5 mr-auto">
+              <div class="social text-center">
+                <button class="btn btn-just-icon btn-round btn-twitter">
+                  <i class="fa fa-twitter"></i>
+                </button>
+                <button class="btn btn-just-icon btn-round btn-dribbble">
+                  <i class="fa fa-dribbble"></i>
+                </button>
+                <button class="btn btn-just-icon btn-round btn-facebook">
+                  <i class="fa fa-facebook"> </i>
+                </button>
+                <h4> o con tu correo electronico </h4>
+              </div>
+
+              <form class="form" method="POST" action="{{ route('register') }}">
+                @csrf
+                <div class="card-body">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="material-icons">face</i></div>
+                      </div>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nombre de Usuario">
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                    </div>
+                  </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i class="material-icons">email</i></div>
+                    </div>
+                      <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Correo Electronico">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i class="material-icons">lock_outline</i></div>
+                    </div>
+                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i class="material-icons">lock_outline</i></div>
+                    </div>
+                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirma tu contraseña">
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" value="" checked>
+                      <span class="form-check-sign">
+                          <span class="check"></span>
+                      </span>
+                      I agree to the <a href="#something">terms and conditions</a>.
+                  </label>
+                </div>
+                </div>
+              <div class="modal-footer justify-content-center">
+                <button type="submit" class="btn btn-primary">
+                    {{ __('Registrarme') }}
+                </button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- end modal --}}
+  <footer class="footer footer-black">
     <div class="container">
       <nav class="float-left">
         <ul>
           <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
+            <a href="#">
+              Some 1
             </a>
           </li>
           <li>
-            <a href="https://creative-tim.com/presentation">
+            <a href="#">
               About Us
             </a>
           </li>
           <li>
-            <a href="http://blog.creative-tim.com">
+            <a href="#">
               Blog
             </a>
           </li>
           <li>
-            <a href="https://www.creative-tim.com/license">
+            <a href="#">
               Licenses
             </a>
           </li>
