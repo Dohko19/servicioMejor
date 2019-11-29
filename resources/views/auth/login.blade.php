@@ -22,7 +22,7 @@
                   </a>
                 </div>
               </div>
-              <p class="description text-center">Or Be Classical</p>
+              <p class="description text-center">O con tu Correo electronico</p>
               <div class="card-body">
                 <div class="input-group">
                   <div class="input-group-prepend">

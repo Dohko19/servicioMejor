@@ -81,12 +81,15 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      @if (auth()->user()->isAdmin())
+                      <a href="{{ route('usuarios.index') }}" class="dropdown-item">Gestion de Usuaios...</a>
+                      @endif
+                      <a class="dropdown-item" href="{{ route('usuarios.show', auth()->user()->id) }}">Mi Perfil</a>
                       <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
                           {{ __('Logout') }}
                       </a>
-
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                           @csrf
                       </form>
@@ -98,6 +101,7 @@
     </div>
   </nav>
   @yield('content')
+
   {{-- Footer section --}}
   <div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-signup" role="document">
