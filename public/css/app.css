@@ -1,13 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-.carousel.carousel-full-nagivation .left {
-  cursor: url(/images/arrow-left.png?5b6695a040c69f4e17023b945cd6e2d8), url(/arrow-left.cur?c720fb4f16d69cc3c5dba61bc96cdc0d), default !important;
-}
-
-.carousel.carousel-full-nagivation .right {
-  cursor: url(/images/arrow-right.png?b05075115da474772b1bf12b3b4e122f), url(/arrow-right.cur?ef69e791ae57424b1901a28e2ad4d708), default !important;
-}
-
 /*!
  * Bootstrap v4.4.0 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

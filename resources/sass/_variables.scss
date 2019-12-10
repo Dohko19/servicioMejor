@@ -17,16 +17,3 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
-
-//
-
-.carousel{
-  &.carousel-full-nagivation{
-    .left{
-      cursor: url("../../img/arrow-left.png"), url("../../img/arrow-left.cur"), default !important;
-    }
-    .right{
-      cursor: url("../../img/arrow-right.png"), url("../../img/arrow-right.cur"), default !important;
-    }
-  }
-}

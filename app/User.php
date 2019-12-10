@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'name_deal', 'last_name', 'phone', 'address', 'hours_atention', 'services_type', 'price', 'package', 'promo_code',
     ];
 
     /**
@@ -55,5 +55,30 @@ class User extends Authenticatable
      public function isAdmin()
     {
         return $this->hasRoles(['admin']);
+    }
+
+    public function isUser()
+    {
+        return $this->hasRoles(['user']);
+    }
+
+    public function isCampo()
+    {
+        return $this->hasRoles(['campo']);
+    }
+
+    public function isCliente()
+    {
+        return $this->hasRoles(['cliente']);
+    }
+
+    public function datosAdd()
+    {
+        return $this->hasOne(DataAdd::class);
+    }
+
+    public function servicesEsp()
+    {
+        return $this->hasOne(ServicesEspecials::class);
     }
 }

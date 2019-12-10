@@ -26,7 +26,7 @@ class UpdateUserRequest extends FormRequest
 
         return [
             'name' => 'required',
-            // 'avatar' => 'image',
+            'avatar' => 'image',
             'email' => 'required|unique:users,email,'.$this->route('usuario')
         ];
     }

@@ -29,16 +29,16 @@ class UsersController extends Controller
     {
         $users = User::with(['roles'])->get();
 
-        return view('users.index', compact('users'));
+        return view('dashboard.users.index', compact('users'));
     }
 
-    function create()
+    public function create()
     {
         $roles = Role::pluck('display_name', 'id');
-        return view('users.create',compact('roles'));
+        return view('dashboard.users.create',compact('roles'));
     }
 
-    function store(CreateUserRequest $request)
+    public function store(CreateUserRequest $request)
     {
         $user =(new User)->fill($request->all());
         // $user = User::create($request->all());
@@ -53,8 +53,13 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
+        $users = User::with(['datosAdd'])->whereIn('id', $user)->first();
+        // if(auth()->user()->datosAdd == null)
+        // {
+        // return redirect()->route('datosadd.create')->with('info', 'Debes completar esta informacion antes de acceder a tu perfil de usuario');
 
-        return view('users.show', compact('user'));
+        // }
+        return view('dashboard.users.show', compact('user','users'));
     }
 
     /**
@@ -68,7 +73,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $this->authorize('edit',$user);
         $roles = Role::pluck('display_name', 'id');
-        return view('users.edit', compact('user','roles'));
+        return view('dashboard.users.edit', compact('user','roles'));
     }
 
     /**
@@ -85,10 +90,9 @@ class UsersController extends Controller
         if ($request->hasFile('avatar')) {
         $user->avatar = $request->file('avatar')->store('public');
         }
-
-        $user->update($request->only('name', 'email'));
+        $user->update($request->except(['avatar']));
         $user->roles()->sync($request->roles);
-        return redirect()->route('usuarios.index')->with('info', 'Usuario Actualizado');
+        return redirect()->route('dashboard.index')->with('info', 'Usuario Actualizado');
 
     }
 

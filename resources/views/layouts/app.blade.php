@@ -21,7 +21,6 @@
 </head>
 <body>
     <div id="app">
-        <header>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -38,7 +37,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-1">
+                    <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -69,40 +68,13 @@
                             </li>
                         @endguest
                     </ul>
-                    <ul class="navbar-nav ml-3">
-                        ASPAS
-                    </ul>
-                    <ul class="navbar-nav ml-3">
-                        CECAFF
-                    </ul>
-                    <ul class="navbar-nav ml-3">
-                        KIIWIT
-                    </ul>
-                    <ul class="navbar-nav ml-3">
-                        CONTÁCTANOS
-                    </ul>
                 </div>
             </div>
         </nav>
-    </header>
+
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
-    <div class="container footer col-md-12 col-lg-12 col-sm-12">
-        <div class="d-flex flex-column h-screen justify-content-between" id="app">
-        <footer class="footer font-small">
-
-          <!-- Copyright -->
-          <div class="footer-copyright text-center py-3 shadow">© {{ date('Y') }} Copyright:
-            <a href="#"> Derechos Reservados</a>
-          </div>
-          <!-- Copyright -->
-
-        </footer>
-    <!-- Footer -->
-
-        </div>
     </div>
 </body>
 </html>

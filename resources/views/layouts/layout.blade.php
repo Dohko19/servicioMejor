@@ -82,7 +82,7 @@
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       @if (auth()->user()->isAdmin())
-                      <a href="{{ route('usuarios.index') }}" class="dropdown-item">Gestion de Usuaios...</a>
+                      <a href="{{ route('dashboard.index') }}" class="dropdown-item">Gestion de Usuaios...</a>
                       @endif
                       <a class="dropdown-item" href="{{ route('usuarios.show', auth()->user()->id) }}">Mi Perfil</a>
                       <a class="dropdown-item" href="{{ route('logout') }}"
